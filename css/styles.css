@@ -1,10 +1,12 @@
 :root {
-    --darkblue: #2E4053;
-    --secondary: #536878;
-    --ternary: #89A9B4;
-    --lighterblue: #A9D1DB;
-    --accent: #D0E2E8;
-
+    --darkpurple: #1C0B19;
+    --keppel: #4EA699;
+    --christmas-red: #B3000C;
+    --christmas-green: #00B32C;
+    --main-font: "Sulphur Point", sans-serif;
+    --secondary-font: "Inconsolata", monospace;
+    --xmas-font-one: "Berkshire Swash", serif;
+    --xmas-font-two: "Mountains of Christmas", serif;
 }
 
 * {
@@ -18,10 +20,10 @@ html {
 
 body {
     margin: 0 auto;
-    font-family: "Inconsolata", monospace;
+    font-family: var(--xmas-font-two);
     text-align: center;
-    background-color: var(--darkblue);
-    color: var(--accent);
+    background-color: var(--darkpurple);
+    color: var(--keppel);
 }
 
 main {
@@ -34,14 +36,19 @@ main {
     justify-content:center;
 }
 
-h1,
-h2,
-h3 {
-    font-family: "Sulphur Point", sans-serif;
-    font-weight: 400;
-    font-size: 5rem;
+h1 {
+    color: var(--christmas-red);
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 14rem;
+    line-height: .2;
+    text-shadow: 3px 3px 6px #FFF;
 }
 
-h3 {
-    font-size: 3rem;
+p {
+    font-size: 5rem;
+    font-weight: 800;
+    line-height: .2;
+    margin-top: -2rem;
+    text-shadow: 1px 1px 1px #FFF;
 }

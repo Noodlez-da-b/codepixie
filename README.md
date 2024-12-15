@@ -1,3 +1,3 @@
-## Landing Page
+# Landing Page
 
-# just a landing page...
+## Welcome on my webpage of (and under) construction!
