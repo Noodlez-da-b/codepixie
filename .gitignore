@@ -1,0 +1,46 @@
+# Node.js dependencies
+node_modules/
+npm-debug.log
+yarn-error.log
+package-lock.json
+yarn.lock
+
+# Compiled source
+dist/
+build/
+*.dll
+*.exe
+*.out
+*.app
+*.log
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Optional npm cache
+.npm/
+
+# Mac system files
+.DS_Store
+
+# Miscellaneous
+*.tmp
+*.bak
