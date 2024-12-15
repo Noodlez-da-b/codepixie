@@ -1,3 +1,38 @@
+@keyframes fallAndBounce {
+    0% {
+      transform: translateY(-100vh);
+      opacity: 0;
+    }
+    60% {
+      transform: translateY(30vh);
+      opacity: 1;
+    }
+    80% { 
+        transform: translateY(-10vh); 
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+}
+
+@keyframes reveal {
+    0% {
+        opacity: 0;
+        font-size: 1rem;
+    }
+    25% {
+        font-size: 2.5rem;
+    }
+    50% {
+        font-size: 3.5rem;
+    }
+    100% { 
+        opacity: 1;
+        font-size: 5rem;
+     }
+}
+  
 :root {
     --darkpurple: #1C0B19;
     --keppel: #4EA699;
@@ -36,6 +71,11 @@ main {
     justify-content:center;
 }
 
+h1 span {
+    display: inline-block;
+    animation: slideIn 0.6s forwards ease-in-out;
+  }
+
 h1 {
     color: var(--christmas-red);
     text-transform: uppercase;
@@ -45,10 +85,34 @@ h1 {
     text-shadow: 3px 3px 6px #FFF;
 }
 
+h1 span {
+    display: inline-block;
+    opacity: 0;
+    animation: fallAndBounce 1s ease-out forwards;
+  }
+
+h1 span.visible {
+    opacity: 1;
+}
+
 p {
     font-size: 5rem;
     font-weight: 800;
     line-height: .2;
     margin-top: -2rem;
     text-shadow: 1px 1px 1px #FFF;
+}
+
+span.advent {
+    font-size: 6rem;
+    line-height: 1;
+}
+
+p.merry-christmas,
+p.countdown span.advent {
+    animation: reveal 6s ease-in;
+}
+
+p.countdown {
+    animation: reveal 6s ease-in;
 }
