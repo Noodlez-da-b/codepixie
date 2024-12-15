@@ -1,6 +1,9 @@
 :root {
     --darkblue: #2E4053;
-    --secondary: #536878
+    --secondary: #536878;
+    --ternary: #89A9B4;
+    --lighterblue: #A9D1DB;
+    --accent: #D0E2E8;
 
 }
 
@@ -17,10 +20,28 @@ body {
     margin: 0 auto;
     font-family: "Inconsolata", monospace;
     text-align: center;
+    background-color: var(--darkblue);
+    color: var(--accent);
+}
+
+main {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    margin: 0 auto;
+    flex-direction: column;
+    align-items: center;
+    justify-content:center;
 }
 
 h1,
-h2 {
+h2,
+h3 {
     font-family: "Sulphur Point", sans-serif;
-    font-weight: 300;
+    font-weight: 400;
+    font-size: 5rem;
+}
+
+h3 {
+    font-size: 3rem;
 }
