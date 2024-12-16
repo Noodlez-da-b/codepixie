@@ -24,7 +24,7 @@ const footerElement = document.querySelector('.footerText')
 const footerElementLetters = footerText.split('')
 
 footerElementLetters.forEach((letter, index) => {
-    const footerTextEl = document.createElement('span');
+    const footerTextEl = document.createElement('span')
     
     if (letter === ' ') {
         footerTextEl.innerHTML = '&nbsp;'
@@ -32,8 +32,40 @@ footerElementLetters.forEach((letter, index) => {
         footerTextEl.textContent = letter
     }
 
-    footerTextEl.style.animation = `fallAndBounce 2s ease-out forwards`
-    footerTextEl.style.animationDelay = `${index * 100}ms`
+    footerTextEl.style.animation = `fallAndBounce 3s ease-out forwards`
+    footerTextEl.style.animationDelay = `${index * 350}ms`
 
     footerElement.appendChild(footerTextEl)
+})
+
+document.addEventListener("DOMContentLoaded", () => {
+    const footerElement = document.querySelector("footer")
+    const snowflakesContainer = document.createElement("div")
+    snowflakesContainer.classList.add("snowflakes-container")
+    document.body.appendChild(snowflakesContainer);
+
+    footerElement.addEventListener("animationend", () => {
+        snowflakesContainer.style.opacity = 1
+        
+        for (let i = 0; i < 10; i++) {
+            const snowflake = document.createElement("div")
+            snowflake.classList.add("snowflake")
+            
+            const randomX = Math.random() * 100
+            const randomSize = Math.random() * 3 + 2
+            
+            snowflake.style.width = `${randomSize}px`
+            snowflake.style.height = `${randomSize}px`
+            snowflake.style.left = `${randomX}%`
+            
+            // Set random animation delay and horizontal drift (X-axis movement)
+            const randomDelay = Math.random() * 3
+            const randomXMovement = Math.random() * 30 - 15
+            
+            snowflake.style.setProperty('--random-x', `${randomXMovement}vw`)
+            snowflake.style.animationDelay = `${randomDelay}s`
+            
+            snowflakesContainer.appendChild(snowflake)
+        }
+    })
 })
