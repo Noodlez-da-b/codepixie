@@ -18,16 +18,16 @@ letters.forEach((letter, index) => {
   letterElement.style.animationDelay = `${index * 300}ms`
 })
 
-const footerText = ' © 2024 - CodePixy.com - All rights reserved '
+const footerText = '© 2024 - CodePixy.com - All rights reserved'
 const footerElement = document.querySelector('.footerText')
 
 const footerElementLetters = footerText.split('')
 
 footerElementLetters.forEach((letter, index) => {
-    const footerTextEl = document.createElement('span')
+    const footerTextEl = document.createElement('span');
     
-    if (letter == ' ') {
-        footerTextEl.textContent = '❄️'
+    if (letter === ' ') {
+        footerTextEl.innerHTML = '&nbsp;'
     } else {
         footerTextEl.textContent = letter
     }

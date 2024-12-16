@@ -121,8 +121,9 @@ p.countdown span.advent {
 }
 
 footer {
+    font-family: var(--main-font);
     color: #FFF;
-    font-size: clamp(.4rem, 2vw, 1.2rem);
+    font-size: clamp(.4rem, 2vw, 1.1rem);
     width: 100%;
     padding: 1rem;
     position: fixed;
