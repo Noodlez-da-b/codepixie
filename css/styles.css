@@ -19,22 +19,20 @@
 @keyframes reveal {
     0% {
         opacity: 0;
-        font-size: 5vw;
-    }
-    25% {
-        font-size: 5.5vw;
+        transform: scale(.5);
     }
     50% {
-        font-size: 6vw;
+        transform: scale(.75);
     }
-    100% { 
+    100% {
         opacity: 1;
-        font-size: 6.25vw;
-     }
+        transform: scale(1);
+    }
 }
   
 :root {
-    --darkpurple: #1C0B19;
+    --darkthemebg: #150208;
+    /* --darkpurple: #1C0B19; */
     --keppel: #4EA699;
     --christmas-red: #B3000C;
     --christmas-green: #00B32C;
@@ -57,7 +55,7 @@ body {
     margin: 0 auto;
     font-family: var(--xmas-font-two);
     text-align: center;
-    background-color: var(--darkpurple);
+    background-color: var(--darkthemebg);
     color: var(--keppel);
     padding: 1rem;
 }
