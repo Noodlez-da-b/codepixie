@@ -1,12 +1,13 @@
+// reckoning remaining days to display
 const dDay = document.querySelector('.d-day')
-const siteNameElement = document.querySelector('.site-name')
-
 const advDays = 25
 const today = new Date()
 let remainingDays = advDays - today.getDate()
 
 dDay.innerHTML = remainingDays
 
+// title text 'snowfalling'
+const siteNameElement = document.querySelector('.site-name')
 const siteName = 'CodePixy'
 
 const letters = siteName.split('')
@@ -18,6 +19,7 @@ letters.forEach((letter, index) => {
   letterElement.style.animationDelay = `${index * 300}ms`
 })
 
+// footer text 'snowfalling'
 const footerText = '© 2024 - CodePixy.com - All rights reserved'
 const footerElement = document.querySelector('.footerText')
 
@@ -38,6 +40,7 @@ footerElementLetters.forEach((letter, index) => {
     footerElement.appendChild(footerTextEl)
 })
 
+// snow animation
 document.addEventListener("DOMContentLoaded", () => {
     const footerElement = document.querySelector("footer")
     const snowflakesContainer = document.createElement("div")
@@ -58,7 +61,6 @@ document.addEventListener("DOMContentLoaded", () => {
             snowflake.style.height = `${randomSize}px`
             snowflake.style.left = `${randomX}%`
             
-            // Set random animation delay and horizontal drift (X-axis movement)
             const randomDelay = Math.random() * 3
             const randomXMovement = Math.random() * 30 - 15
             
