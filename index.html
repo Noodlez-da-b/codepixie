@@ -22,5 +22,10 @@
          <div class="snowfall"></div>
 
         <script src="js/script.js"></script>
+        <script>
+            if (window.location.hostname === 'codepixy.com') {
+                window.location.href = 'https://www.codepixy.com' + window.location.pathname + window.location.search;
+            }
+        </script>
     </body>
 </html>
