@@ -131,6 +131,7 @@ p.countdown span.advent {
 p.merry-christmas,
 p.countdown span.advent {
     animation: reveal 6s ease-in forwards;
+    text-transform: uppercase;
 }
 
 .snowflakes-container {

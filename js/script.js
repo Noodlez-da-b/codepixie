@@ -1,10 +1,10 @@
 // reckoning remaining days to display
-const dDay = document.querySelector('.d-day')
-const advDays = 25
-const today = new Date()
-let remainingDays = advDays - today.getDate()
+// const dDay = document.querySelector('.d-day')
+// const advDays = 25
+// const today = new Date()
+// let remainingDays = advDays - today.getDate()
 
-dDay.innerHTML = remainingDays
+// dDay.innerHTML = remainingDays
 
 // title text 'snowfalling'
 const siteNameElement = document.querySelector('.site-name')
