@@ -1,12 +1,40 @@
-// reckoning remaining days to display
-// const dDay = document.querySelector('.d-day')
-// const advDays = 25
-// const today = new Date()
-// let remainingDays = advDays - today.getDate()
+// reckoning remaining time till new year to display
+const today = new Date()
+const todayDay = today.getDate()
+const todayHour = today.getHours()
+const todayMin = today.getMinutes()
+const todaySec = today.getSeconds()
+const newYearDay = 30
+const newYearHour = 23
+const newYearMin = 60
+const newYearSec = 60
 
-// dDay.innerHTML = remainingDays
+const daysCd = newYearDay - todayDay
+const hoursCd = newYearHour - todayHour
+const minCd = newYearMin - todayMin
+const secCd = newYearSec - todaySec
 
-// title text 'snowfalling'
+const dateTxt = num => num < 10 ? num = `0${num}` : num
+const checkPlural = (num, msg) => num <= 1 ? msg : msg += 's' 
+
+let daysCdText = dateTxt(daysCd)
+let hoursCdText = dateTxt(hoursCd)
+let minCdText = dateTxt(minCd)
+let secCdText = dateTxt(secCd)
+
+let dayMsg = 'day'
+let hourMsg = 'hour'
+let minuteMsg = 'minute'
+let secondMsg = 'second'
+
+let cd = document.querySelector('.countdown')
+
+cd.innerHTML = `
+    ${daysCd} ${checkPlural(daysCd, dayMsg)}<br/>
+    ${hoursCdText} h ${minCdText} m ${secCdText} s
+`
+
+// title decomposition
 const siteNameElement = document.querySelector('.site-name')
 const siteName = 'CodePixy'
 
@@ -19,7 +47,6 @@ letters.forEach((letter, index) => {
   letterElement.style.animationDelay = `${index * 300}ms`
 })
 
-// footer text 'snowfalling'
 const footerText = '© 2024 - CodePixy.com - All rights reserved'
 const footerElement = document.querySelector('.footerText')
 
@@ -28,11 +55,7 @@ const footerElementLetters = footerText.split('')
 footerElementLetters.forEach((letter, index) => {
     const footerTextEl = document.createElement('span')
     
-    if (letter === ' ') {
-        footerTextEl.innerHTML = '&nbsp;'
-    } else {
-        footerTextEl.textContent = letter
-    }
+    letter === ' ' ? footerTextEl.innerHTML = '&nbsp;' : footerTextEl.textContent = letter
 
     footerTextEl.style.animation = `fallAndBounce 3s ease-out forwards`
     footerTextEl.style.animationDelay = `${index * 350}ms`

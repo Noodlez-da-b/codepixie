@@ -46,7 +46,7 @@
     --darkthemebg: #100206;
     --keppel: #4EA699;
     --christmas-red: #B3000C;
-    --christmas-green: #00B32C;
+    --christmas-green: #8cf3a6;
     --main-font: "Sulphur Point", sans-serif;
     --secondary-font: "Inconsolata", monospace;
     --xmas-font-one: "Berkshire Swash", serif;
@@ -65,10 +65,13 @@ html {
 
 body {
     margin: 0 auto;
-    font-family: var(--xmas-font-two);
+    font-family: var(--xmas-font-one);
     text-align: center;
-    background-color: var(--darkthemebg);
-    color: var(--keppel);
+    background-image: url(../img/x-mas-dark.webp);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #FFFF;
     padding: 1rem;
     overflow: hidden;
 }
@@ -95,10 +98,11 @@ h1 span {
   }
 
 h1 {
+    font-family: var(--xmas-font-two);
     color: var(--christmas-red);
     text-transform: uppercase;
-    font-weight: 800;
-    font-size: clamp(3rem, 10vw, 10rem);
+    font-weight: 900;
+    font-size: clamp(3.2rem, 12vw, 11rem);
     line-height: .5;
     text-shadow: 3px 3px 6px #FFF;
 }
@@ -118,10 +122,10 @@ p {
     font-weight: 800;
     line-height: .5;
     margin-top: -1rem;
-    text-shadow: 1px 1px 1px #FFF;
+    text-shadow: 3px 3px 6px #000;
 }
 
-p.countdown span.advent {
+p.countdown {
     font-size: clamp(1.5rem, 5vw, 3rem);
     line-height: 1;
     opacity: 0;
@@ -129,9 +133,9 @@ p.countdown span.advent {
 }
 
 p.merry-christmas,
-p.countdown span.advent {
+p.countdown {
     animation: reveal 6s ease-in forwards;
-    text-transform: uppercase;
+    
 }
 
 .snowflakes-container {
@@ -182,6 +186,7 @@ footer {
     text-shadow: 2px 2px 2px #FFF;
     letter-spacing: .7vw;
     border-bottom: 1px solid #FFF;
+    background-color: #00000051;
 }
 
 footer span {
@@ -196,7 +201,7 @@ footer span {
     }
   
     p,
-    p.countdown span.advent {
+    p.countdown {
       font-size: 5vw;
     }
   }
@@ -207,7 +212,7 @@ footer span {
     }
 
     p,
-    p.countdown span.advent {
+    p.countdown {
         font-size: 5rem;
         animation: reveal 6s ease-in-out forwards;
     }
