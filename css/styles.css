@@ -16,21 +16,6 @@
     }
 }
 
-@keyframes reveal {
-    0% {
-        opacity: 0;
-        transform: scale(0.5);
-        transform-origin: center center;
-    }
-    50% {
-        transform: scale(0.75);
-    }
-    100% {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-
 @keyframes snow {
     0% {
         transform: translateX(0) translateY(0);
@@ -43,14 +28,18 @@
 }
   
 :root {
-    --darkthemebg: #100206;
+    --darktheme-bg: #1d2528;
+    --darktheme-main-text: #c1d9e6;
+    --darktheme-secondary-text: #aed0dd;
+
+    /* --darkthemebg: #100206;
     --keppel: #4EA699;
     --christmas-red: #B3000C;
     --christmas-green: #8cf3a6;
     --main-font: "Sulphur Point", sans-serif;
     --secondary-font: "Inconsolata", monospace;
     --xmas-font-one: "Berkshire Swash", serif;
-    --xmas-font-two: "Mountains of Christmas", serif;
+    --xmas-font-two: "Mountains of Christmas", serif; */
 }
 
 * {
@@ -64,16 +53,21 @@ html {
 }
 
 body {
+    font-family: "Genos", sans-serif;
+    font-optical-sizing: auto;
+    background-color: var(--darktheme-bg);
+    color: var(--darktheme-main-text);
     margin: 0 auto;
-    font-family: var(--xmas-font-one);
     text-align: center;
-    background-image: url(../img/x-mas-dark.webp);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    color: #FFFF;
     padding: 1rem;
     overflow: hidden;
+}
+
+h1,
+h2,
+h3 {
+    font-family: "Play", sans-serif;
+    font-weight: 700;
 }
 
 img {
@@ -98,23 +92,10 @@ h1 span {
   }
 
 h1 {
-    font-family: var(--xmas-font-two);
-    color: var(--christmas-red);
     text-transform: uppercase;
-    font-weight: 900;
-    font-size: clamp(3.2rem, 12vw, 11rem);
+    font-weight: 700;
+    font-size: clamp(2.9rem, 10vw, 9rem);
     line-height: .5;
-    text-shadow: 3px 3px 6px #FFF;
-}
-
-h1 span {
-    display: inline-block;
-    opacity: 0;
-    animation: fallAndBounce 1s ease-out forwards;
-}
-
-h1 span.visible {
-    opacity: 1;
 }
 
 p {
@@ -128,14 +109,6 @@ p {
 p.countdown {
     font-size: clamp(1.5rem, 5vw, 3rem);
     line-height: 1;
-    opacity: 0;
-    animation: reveal 6s ease-in forwards;
-}
-
-p.merry-christmas,
-p.countdown {
-    animation: reveal 6s ease-in forwards;
-    
 }
 
 .snowflakes-container {
@@ -161,21 +134,8 @@ p.countdown {
     animation: snow 3s linear infinite;
 }
 
-footer::before {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 20px;
-    background: linear-gradient(to top, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0));
-    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
-    border-radius: 50%;
-}
-
 footer {
-    font-family: var(--main-font);
-    color: #FFF;
+    color: var(--darktheme-secondary-text);
     font-size: clamp(.4rem, 2vw, 1.1rem);
     width: 100%;
     padding: 1rem;
@@ -183,10 +143,7 @@ footer {
     bottom: 0;
     text-align: center;
     animation: fallAndBounce 1s ease-out forwards;
-    text-shadow: 2px 2px 2px #FFF;
     letter-spacing: .7vw;
-    border-bottom: 1px solid #FFF;
-    background-color: #00000051;
 }
 
 footer span {
@@ -197,7 +154,7 @@ footer span {
 
 @media (min-width: 768px) {
     h1 {
-      font-size: 15vw;
+      font-size: 12vw;
     }
   
     p,
@@ -208,12 +165,11 @@ footer span {
   
 @media (min-width: 1024px) {
     h1 {
-        font-size: 15rem;
+        font-size: 12rem;
     }
 
     p,
     p.countdown {
         font-size: 5rem;
-        animation: reveal 6s ease-in-out forwards;
     }
 }
